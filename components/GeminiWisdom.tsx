@@ -20,20 +20,20 @@ const GeminiWisdom: React.FC = () => {
       {!wisdom && !loading ? (
         <button
           onClick={fetchWisdom}
-          className="inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-slate-800 rounded-xl border border-slate-700 hover:border-slate-500 shadow-lg"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 font-bold text-white text-sm sm:text-base transition-all duration-200 bg-slate-800 rounded-xl border border-slate-700 hover:border-slate-500 shadow-lg"
         >
           View Insight
         </button>
       ) : (
-        <div className="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl shadow-xl relative transition-all duration-500">
+        <div className="bg-slate-900/60 border border-slate-800 p-4 sm:p-8 rounded-2xl shadow-xl relative transition-all duration-500 w-full max-w-2xl mx-auto">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-4">
               <Loader2 className="animate-spin text-slate-500 mb-4" size={32} />
-              <p className="text-slate-500 font-medium">Loading insight...</p>
+              <p className="text-slate-500 font-medium text-sm">Loading insight...</p>
             </div>
           ) : (
             <div className="text-left space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-2 flex-wrap gap-2">
                 <div className="flex items-center gap-2 text-slate-500 text-xs font-bold uppercase tracking-widest">
                   <MessageSquareText size={14} />
                   <span>Insight</span>
@@ -45,7 +45,7 @@ const GeminiWisdom: React.FC = () => {
                   Clear
                 </button>
               </div>
-              <p className="text-lg md:text-xl text-slate-300 leading-relaxed font-medium">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed font-medium">
                 {wisdom?.advice}
               </p>
             </div>
